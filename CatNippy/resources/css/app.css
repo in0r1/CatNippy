@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   catnippy design tokens
+========================= */
+
+:root {
+    color-scheme: dark;
+
+    --catnippy-bg: #263b30;
+    --catnippy-surface: #30483a;
+    --catnippy-surface-hover: #395542;
+    --catnippy-border: #526e59;
+    --catnippy-text: #edf3e8;
+    --catnippy-muted: #b5c6b5;
+    --catnippy-purple: #4d895a;
+    --catnippy-purple-hover: #609c6b;
+    --catnippy-purple-soft: #3c5943;
+}
+
+/* =========================
+   Base
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--catnippy-bg) !important;
+    color: var(--catnippy-text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--catnippy-text);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.04em;
+}
+
+h1 {
+    font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.055em;
+}
+
+h2 {
+    font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 1.05rem;
+}
+
+h5, h6 {
+    font-size: 0.95rem;
+}
+
+p {
+    line-height: 1.7;
+    color: var(--catnippy-muted);
+}
+
+.text-muted,
+.text-secondary {
+    color: var(--catnippy-muted) !important;
+}
+
+small, .small {
+    font-size: 12px;
+}
+
+a {
+    color: #a8d5a5;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d0e8c7;
+}
+
+:focus-visible {
+    outline: 2px solid var(--catnippy-purple);
+    outline-offset: 3px;
+}
+
+/* =========================
+   Navigation
+========================= */
+
+.navbar {
+    background: #dce7d6 !important;
+    border-bottom: 1px solid #c4d4bd;
+}
+
+.navbar .container {
+    min-height: 56px;
+}
+
+.navbar-brand {
+    color: #20382a !important;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.065em;
+    line-height: 1;
+}
+
+.navbar-brand span {
+    color: #477a4e;
+}
+
+.navbar .d-flex {
+    gap: 24px !important;
+}
+
+.navbar .d-flex > a:not(.navbar-brand) {
+    color: #435b47;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar .d-flex > a:not(.navbar-brand):hover {
+    color: #254c31;
+}
+
+/* =========================
+   Product cards
+========================= */
+
+.card {
+    background: var(--catnippy-surface);
+    color: var(--catnippy-text);
+    border: 1px solid var(--catnippy-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.card:hover {
+    border-color: #78977a;
+    transform: translateY(-3px);
+}
+
+.card-body {
+    background: var(--catnippy-surface);
+    padding: 18px;
+}
+
+.card-title {
+    color: var(--catnippy-text);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.025em;
+}
+
+.card-text {
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.product-price {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: #dcebd5;
+}
+
+/* =========================
+   Forms
+========================= */
+
+.form-control,
+.form-select {
+    min-height: 40px;
+    color: var(--catnippy-text);
+    background-color: var(--catnippy-surface);
+    border: 1px solid var(--catnippy-border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.form-control::placeholder {
+    color: #a4b8a5;
+}
+
+.form-control:focus,
+.form-select:focus {
+    color: var(--catnippy-text);
+    background-color: var(--catnippy-surface);
+    border-color: var(--catnippy-purple);
+    box-shadow: 0 0 0 0.2rem rgb(77 137 90 / 20%);
+}
+
+.form-select option {
+    background: var(--catnippy-surface);
+    color: var(--catnippy-text);
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.btn {
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    padding: 9px 15px;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-sm {
+    padding: 6px 11px;
+    font-size: 12px;
+}
+
+.btn-primary,
+.btn-dark {
+    color: #fff !important;
+    background: var(--catnippy-purple) !important;
+    border-color: var(--catnippy-purple) !important;
+}
+
+.btn-primary:hover,
+.btn-dark:hover {
+    color: #fff !important;
+    background: var(--catnippy-purple-hover) !important;
+    border-color: var(--catnippy-purple-hover) !important;
+    transform: translateY(-1px);
+}
+
+.btn-outline-dark,
+.btn-outline-secondary {
+    color: var(--catnippy-text);
+    border-color: var(--catnippy-border);
+}
+
+.btn-outline-dark:hover,
+.btn-outline-secondary:hover {
+    color: #fff;
+    background: var(--catnippy-purple-soft);
+    border-color: var(--catnippy-purple);
+}
+
+.btn:disabled {
+    opacity: 0.55;
+    transform: none;
+}
+
+/* =========================
+   Pagination
+========================= */
+
+.pagination {
+    gap: 5px;
+}
+
+.page-link {
+    color: var(--catnippy-text);
+    background: var(--catnippy-surface);
+    border-color: var(--catnippy-border);
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.page-link:hover {
+    color: #fff;
+    background: var(--catnippy-purple-soft);
+    border-color: var(--catnippy-purple);
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background: var(--catnippy-purple);
+    border-color: var(--catnippy-purple);
+}
+
+.page-item.disabled .page-link {
+    color: #849686;
+    background: var(--catnippy-surface);
+    border-color: var(--catnippy-border);
+}
+
+/* =========================
+   Layout and footer
+========================= */
+
+main > .container {
+    max-width: 1200px;
+}
+
+footer {
+    color: var(--catnippy-muted);
+    background: #1c3025;
+    border-top: 1px solid #405846;
+    font-size: 12px;
+}
+
+footer .fw-bold {
+    color: var(--catnippy-text);
+    font-size: 14px;
+    letter-spacing: -0.03em;
+}
+
+/* =========================
+   Responsive adjustments
+========================= */
+
+@media (max-width: 576px) {
+    .navbar .container {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+
+    .navbar .d-flex {
+        gap: 12px !important;
+    }
+
+    .navbar .d-flex > a:not(.navbar-brand) {
+        font-size: 12px;
+    }
+
+    .card-body {
+        padding: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* =========================
+   Logo Stuff
+========================= */
+.catnippy-logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #20382a !important;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+}
+
+.catnippy-logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.catnippy-logo span {
+    color: #39834b;
+}
+
+.catnippy-logo:hover {
+    color: #286638 !important;
+}
