@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Your bag — CatNippy')
+@section('title', 'Your cart — CatNippy')
 
 @section('content')
 <div class="container py-5">
     <div class="mb-4">
-        <h1>Your bag</h1>
+        <h1>Your cart</h1>
         <p>Review your items before checkout.</p>
     </div>
 
@@ -18,7 +18,7 @@
     @if ($items->isEmpty())
         <div class="card">
             <div class="card-body text-center py-5">
-                <h2 class="mb-3">Your bag is empty</h2>
+                <h2 class="mb-3">Your cart is empty</h2>
                 <p>Find something you'll love in our collection.</p>
                 <a href="{{ route('products.index') }}"
                    class="btn btn-primary mt-2">
