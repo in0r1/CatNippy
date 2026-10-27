@@ -18,7 +18,7 @@ class AvatarController extends Controller
         
         // Relies on the supplied filename extension.
         // It does not verify that the file content is a real image.
-        //$extension = strtolower($file->getClientOriginalExtension());
+        $extension = strtolower($file->getClientOriginalExtension());
         /*
         $extension = $file->getClientOriginalExtension();
         
