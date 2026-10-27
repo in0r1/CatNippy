@@ -3,8 +3,7 @@
 @section('content')
 <div class="container py-5">
     <div class="mb-4">
-        <div class="small text-uppercase mb-2"
-             style="color:#a855f7;letter-spacing:2px">
+        <div class="small text-uppercase mb-2">
             CatNippy / CATALOG OPERATIONS
         </div>
         <h1 class="h2">Stock management</h1>
