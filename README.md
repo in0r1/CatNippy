@@ -14,4 +14,8 @@ php artisan storage:link
 php artisan serve
 ```
 
+for supplychain demo refer to:
+https://github.com/in0r1/breeze-vulnerable
+where you need to install it through composer and then replace web.php and few other files from this project to make it all work thogether
+
 ![cute cat](/CatNippy/public/images/catnippy.svg)
