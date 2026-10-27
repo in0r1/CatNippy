@@ -5,8 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="mb-4">
-                <div class="text-uppercase small mb-2"
-                     style="color: #a855f7; letter-spacing: 2px;">
+                <div class="text-uppercase small mb-2">
                     CatNippy / OPERATIONS
                 </div>
 
