@@ -17,9 +17,9 @@
     --catnippy-border: #526e59;
     --catnippy-text: #edf3e8;
     --catnippy-muted: #b5c6b5;
-    --catnippy-purple: #4d895a;
-    --catnippy-purple-hover: #609c6b;
-    --catnippy-purple-soft: #3c5943;
+    --catnippy-green: #4d895a;
+    --catnippy-green-hover: #609c6b;
+    --catnippy-green-soft: #3c5943;
 }
 
 /* =========================
@@ -96,7 +96,7 @@ a:hover {
 }
 
 :focus-visible {
-    outline: 2px solid var(--catnippy-purple);
+    outline: 2px solid var(--catnippy-green);
     outline-offset: 3px;
 }
 
@@ -209,7 +209,7 @@ a:hover {
 .form-select:focus {
     color: var(--catnippy-text);
     background-color: var(--catnippy-surface);
-    border-color: var(--catnippy-purple);
+    border-color: var(--catnippy-green);
     box-shadow: 0 0 0 0.2rem rgb(77 137 90 / 20%);
 }
 
@@ -243,15 +243,15 @@ a:hover {
 .btn-primary,
 .btn-dark {
     color: #fff !important;
-    background: var(--catnippy-purple) !important;
-    border-color: var(--catnippy-purple) !important;
+    background: var(--catnippy-green) !important;
+    border-color: var(--catnippy-green) !important;
 }
 
 .btn-primary:hover,
 .btn-dark:hover {
     color: #fff !important;
-    background: var(--catnippy-purple-hover) !important;
-    border-color: var(--catnippy-purple-hover) !important;
+    background: var(--catnippy-green-hover) !important;
+    border-color: var(--catnippy-green-hover) !important;
     transform: translateY(-1px);
 }
 
@@ -264,8 +264,8 @@ a:hover {
 .btn-outline-dark:hover,
 .btn-outline-secondary:hover {
     color: #fff;
-    background: var(--catnippy-purple-soft);
-    border-color: var(--catnippy-purple);
+    background: var(--catnippy-green-soft);
+    border-color: var(--catnippy-green);
 }
 
 .btn:disabled {
@@ -291,14 +291,14 @@ a:hover {
 
 .page-link:hover {
     color: #fff;
-    background: var(--catnippy-purple-soft);
-    border-color: var(--catnippy-purple);
+    background: var(--catnippy-green-soft);
+    border-color: var(--catnippy-green);
 }
 
 .page-item.active .page-link {
     color: #fff;
-    background: var(--catnippy-purple);
-    border-color: var(--catnippy-purple);
+    background: var(--catnippy-green);
+    border-color: var(--catnippy-green);
 }
 
 .page-item.disabled .page-link {
