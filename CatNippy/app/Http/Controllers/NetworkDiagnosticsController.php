@@ -9,6 +9,7 @@ class NetworkDiagnosticsController extends Controller
 {
     public function index(Request $request): View
     {
+        abort_unless($request->user()->is_admin, 403);
         return view('admin.tools.connectivity', [
             'host' => '',
             'output' => null,
