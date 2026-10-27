@@ -45,7 +45,7 @@
                     @csrf
                     
                     <button type="submit" class="btn btn-primary">
-                        Add to bag
+                        Add to cart
                     </button>
                 </form>
             </div>
