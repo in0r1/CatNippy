@@ -53,7 +53,7 @@ class CartController extends Controller
 
         return redirect()
             ->route('cart.index')
-            ->with('success', 'Product added to your bag.');
+            ->with('success', 'Product added to your cart.');
     }
 
     public function update(Request $request, Product $product)
@@ -74,7 +74,7 @@ class CartController extends Controller
 
         return redirect()
             ->route('cart.index')
-            ->with('success', 'Your bag has been updated.');
+            ->with('success', 'Your cart has been updated.');
     }
 
     public function destroy(Request $request, Product $product)
@@ -87,6 +87,6 @@ class CartController extends Controller
 
         return redirect()
             ->route('cart.index')
-            ->with('success', 'Product removed from your bag.');
+            ->with('success', 'Product removed from your cart.');
     }
 }
