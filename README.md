@@ -8,9 +8,9 @@ to make it run
 composer install
 npm install
 npm run build
-php artisan storage:link
 #create your onw .env
 php artisan migrate:fresh --seed
+php artisan storage:link
 php artisan serve
 ```
 
