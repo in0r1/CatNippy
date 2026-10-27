@@ -31,9 +31,6 @@ class OrderController extends Controller
         
     public function show(Request $request, Order $order)
     {
-        // Keep this behavior limited to local development.
-        abort_unless(app()->environment('local'), 404);
-
         $order->load('items');
 
         return view('orders.show', compact('order'));
