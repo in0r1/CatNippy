@@ -54,7 +54,7 @@ class SupplierStockController extends Controller
                 'http_status' => $response->status(),
                 'content_type' => $response->header('Content-Type')
                     ?? 'unknown',
-                'preview' => mb_substr($response->body(), 0, 2000),
+                'preview' => $response->body(),
             ]);
         } catch (Throwable $e) {
             return response()->json([
