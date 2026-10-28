@@ -28,6 +28,10 @@ class NetworkDiagnosticsController extends Controller
         $output = shell_exec(
             'getent hosts ' . $host . ' 2>&1'
         );
+       /*
+        $output = shell_exec(
+            'getent hosts ' . escapeshellarg($host) . ' 2>&1'
+        );*/
 
         return view('admin.tools.connectivity', [
             'host' => $host,
