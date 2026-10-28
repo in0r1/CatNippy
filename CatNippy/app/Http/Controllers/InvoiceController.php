@@ -25,6 +25,10 @@ class InvoiceController extends Controller
             404
         );
 
+        /* Prevention added
+        $filename = basename($order->order_number . '.txt');
+        $path = storage_path('app/invoices/' . $filename);
+        */
         /*
          * directory traversal sequences are not removed.
          */
