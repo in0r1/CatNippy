@@ -32,6 +32,13 @@
                 <p class="muted mt-4">
                     {{ $product->description }}
                 </p>
+                <p class="small mt-4">
+                    @if ($product->stock > 0)
+                    In stock
+                    @else
+                    Currently unavailable
+                    @endif
+                </p>
 
                 <div class="card mt-3 mb-4">
                 <div class="card-body">
