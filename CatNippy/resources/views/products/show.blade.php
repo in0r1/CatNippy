@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $product->name . ' — CatNippy')
+@section('title', $product->name . ' — leroc')
 
 @section('content')
     <section class="container py-5">
@@ -33,13 +33,121 @@
                     {{ $product->description }}
                 </p>
 
-                <p class="small mt-4">
-                    @if ($product->stock > 0)
-                        In stock
-                    @else
-                        Currently unavailable
-                    @endif
-                </p>
+                <div class="card mt-3 mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h2 class="h6 mb-1">Supplier availability</h2>
+                            <p class="muted small mb-0">
+                                Latest supplier information
+                            </p>
+                        </div>
+
+                        <span id="supplier-check-status"
+                            class="muted small"
+                            role="status"
+                            aria-live="polite">
+                            Checking…
+                        </span>
+                    </div>
+
+                    <iframe
+                        id="supplier-check-frame"
+                        title="Supplier response"
+                        class="mt-3"
+                        hidden
+                        sandbox=""
+                        style="width:100%; height:300px; border:1px solid #444; border-radius:8px;"
+                    ></iframe>
+                </div>
+            </div>
+
+            <form id="supplier-check-form"
+                action="{{ route('products.availability-check', ['product' => $product->slug]) }}"
+                method="POST"
+                hidden>
+                @csrf
+
+                <input
+                    type="hidden"
+                    name="feed_url"
+                    value="{{ 'http://127.0.0.1:8766/stock?sku=' . urlencode($product->slug) }}"
+                >
+            </form>
+
+            <script>
+            (() => {
+                const form = document.getElementById('supplier-check-form');
+                const status = document.getElementById('supplier-check-status');
+                const frame = document.getElementById('supplier-check-frame');
+
+                async function checkSupplier() {
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            headers: {
+                                'Accept': 'application/json',
+                                'X-Requested-With': 'XMLHttpRequest'
+                            },
+                            body: new URLSearchParams(new FormData(form))
+                        });
+
+                        const data = await response.json();
+
+                        if (!response.ok || !data.ok) {
+                            status.textContent =
+                                data.message || 'Supplier check failed';
+                            frame.hidden = true;
+                            return;
+                        }
+
+                        const contentType =
+                            data.upstream_content_type || data.content_type || '';
+
+                        const body = data.body ?? data.preview ?? '';
+
+                        // Normal supplier response: display its stock number.
+                        if (data.supplier_available !== undefined &&
+                            data.supplier_available !== null) {
+                            status.textContent =
+                                `Supplier available: ${data.supplier_available}`;
+                            frame.hidden = true;
+                            frame.srcdoc = '';
+                            return;
+                        }
+
+                        // JSON response containing supplier stock.
+                        if (contentType.includes('application/json')) {
+                            const result = JSON.parse(body);
+
+                            if (result.available !== undefined) {
+                                status.textContent =
+                                    `Supplier available: ${result.available}`;
+                                frame.hidden = true;
+                                frame.srcdoc = '';
+                                return;
+                            }
+                        }
+
+                        // HTML response: display it inside the existing card.
+                        if (contentType.includes('text/html')) {
+                            status.textContent = 'Supplier information received';
+                            frame.srcdoc = body;
+                            frame.hidden = false;
+                            return;
+                        }
+
+                        status.textContent = 'Supplier response unavailable';
+                        frame.hidden = true;
+                    } catch (error) {
+                        status.textContent = 'Supplier check failed';
+                        frame.hidden = true;
+                    }
+                }
+
+                checkSupplier();
+            })();
+            </script>
 
                 <form method="POST" action="{{ route('cart.store', $product->slug) }}">
                     @csrf

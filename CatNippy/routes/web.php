@@ -14,6 +14,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\NetworkDiagnosticsController;
 use App\Http\Controllers\SupplierStockController;
+use App\Http\Controllers\ProductAvailabilityController;
 
 
 /*
@@ -127,3 +128,8 @@ Route::middleware('auth')->group(function () {
         'refresh',
     ])->name('admin.catalog.stock.refresh');
 });
+
+Route::post(
+    '/products/{product:slug}/availability-check',
+    [ProductAvailabilityController::class, 'check']
+)->name('products.availability-check');
