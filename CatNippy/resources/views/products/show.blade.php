@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $product->name . ' — leroc')
+@section('title', $product->name . ' — CatNippy')
 
 @section('content')
     <section class="container py-5">
