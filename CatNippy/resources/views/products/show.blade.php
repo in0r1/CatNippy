@@ -32,11 +32,12 @@
                 <p class="muted mt-4">
                     {{ $product->description }}
                 </p>
+
                 <p class="small mt-4">
                     @if ($product->stock > 0)
-                    In stock
+                        In stock
                     @else
-                    Currently unavailable
+                        Currently unavailable
                     @endif
                 </p>
 
