@@ -40,4 +40,19 @@ class Product extends Model
     {
         return $this->hasMany(ProductReview::class);
     }
+
+    protected function imageUrl(): Attribute
+    {
+        return Attribute::get(function () {
+            if (! $this->image) {
+                return null;
+            }
+
+            if (str_starts_with($this->image, 'http://') || str_starts_with($this->image, 'https://')) {
+                return $this->image; // already a full URL (CDN/external)
+            }
+
+            return asset('storage/' . ltrim($this->image, '/'));
+        });
+    }
 }
