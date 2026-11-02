@@ -104,6 +104,11 @@
                                     loading="lazy"
                                 >
                             @else
+                                <div class="product-placeholder">
+                                    Product image coming soon
+                                </div>
+                            @endif
+
 
                             <div class="card-body">
                                 <p class="muted small mb-2">
