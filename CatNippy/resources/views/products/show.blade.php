@@ -10,10 +10,11 @@
 
         <div class="row g-5 mt-2">
             <div class="col-md-6">
-                <div class="product-placeholder rounded-4"
-                     style="min-height: 420px;">
-                    Product image coming soon
-                </div>
+                @if ($product->image_url)
+                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="product-hero-image" loading="lazy">
+                @else
+                    <div class="product-placeholder">Product image coming soon</div>
+                @endif
             </div>
 
             <div class="col-md-6 py-md-4">

@@ -386,3 +386,20 @@ footer .fw-bold {
 .catnippy-logo:hover {
     color: #286638 !important;
 }
+
+.product-thumb {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    display: block;
+    height: 200px;
+}
+
+.product-hero-image {
+    width: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    border-radius: 1rem;
+    display: block;
+}

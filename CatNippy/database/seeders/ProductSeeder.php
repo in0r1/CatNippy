@@ -11,6 +11,7 @@ class ProductSeeder extends Seeder
 {
     public function run(): void
     {
+        //image path to the image in storage/app/public/'folder name'/'image name'.'ext'
         $products = [
             [
                 'category' => 'Catnip',
@@ -18,6 +19,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Dried Catnip 20 g. Natural, aromatic catnip for toys and scratching posts. Encourages cats to play actively.',
                 'price' => 14.90,
                 'stock' => 100,
+                'image' => null,
             ],
             [
                 'category' => 'Catnip',
@@ -25,6 +27,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Ground Catnip 30 g. Finely ground catnip, ideal for filling toys, sachets, and scent mats.',
                 'price' => 19.90,
                 'stock' => 80,
+                'image' => null,
             ],
             [
                 'category' => 'Catnip',
@@ -32,6 +35,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Premium Catnip 15 g. Carefully selected catnip leaves and flower heads with an intense aroma.',
                 'price' => 24.90,
                 'stock' => 50,
+                'image' => null,
             ],
             [
                 'category' => 'Catnip',
@@ -39,6 +43,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Organic Catnip 25 g. Dried catnip from certified organic farms. Natural pleasure for your cat.',
                 'price' => 22.90,
                 'stock' => 60,
+                'image' => null,
             ],
             [
                 'category' => 'Catnip',
@@ -46,6 +51,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Catnip in a Pot. Live catnip for growing at home. Fresh leaves and natural scent within paw\'s reach.',
                 'price' => 18.90,
                 'stock' => 35,
+                'image' => null,
             ],
             [
                 'category' => 'Catnip',
@@ -53,6 +59,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Dried Catnip 50 g. Economy pack of dried catnip for refilling toys and sachets.',
                 'price' => 29.90,
                 'stock' => 70,
+                'image' => null,
             ],
             [
                 'category' => 'Sprays and Aromas',
@@ -60,6 +67,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Catnip Spray 100 ml. Convenient spray for toys and scratching posts. Helps spark your cat\'s interest in new accessories.',
                 'price' => 24.90,
                 'stock' => 65,
+                'image' => null,
             ],
             [
                 'category' => 'Sprays and Aromas',
@@ -67,6 +75,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Spray 50 ml. Aromatic catnip spray to encourage your cat to use the scratching post.',
                 'price' => 17.90,
                 'stock' => 55,
+                'image' => null,
             ],
             [
                 'category' => 'Cat Toys',
@@ -74,6 +83,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Soft plush fish with aromatic catnip. Perfect for catching, tossing, and kicking.',
                 'price' => 29.90,
                 'stock' => 45,
+                'image' => null,
             ],
             [
                 'category' => 'Cat Toys',
@@ -81,6 +91,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Lightweight plush mouse with catnip that encourages hunting and active play.',
                 'price' => 19.90,
                 'stock' => 90,
+                'image' => null,
             ],
             [
                 'category' => 'Cat Toys',
@@ -88,6 +99,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Soft cushion filled with catnip. Great for cuddling and cat play.',
                 'price' => 34.90,
                 'stock' => 40,
+                'image' => null,
             ],
             [
                 'category' => 'Plant Alternatives',
@@ -95,6 +107,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Natural matatabi sticks that encourage cats to chew, sniff, and play.',
                 'price' => 16.90,
                 'stock' => 75,
+                'image' => null,
             ],
             [
                 'category' => 'Plant Alternatives',
@@ -102,6 +115,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Valerian Root 20 g. Aromatic valerian root for scent toys. An alternative to catnip.',
                 'price' => 21.90,
                 'stock' => 45,
+                'image' => null,
             ],
             [
                 'category' => 'Sets and Gifts',
@@ -109,6 +123,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Starter set: dried catnip, plush mouse, and a matatabi sample.',
                 'price' => 39.90,
                 'stock' => 30,
+                'image' => null,
             ],
             [
                 'category' => 'Sets and Gifts',
@@ -116,6 +131,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Rich set: premium catnip, spray, cushion, and matatabi sticks.',
                 'price' => 89.90,
                 'stock' => 20,
+                'image' => null,
             ],
             [
                 'category' => 'Sets and Gifts',
@@ -123,6 +139,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Gift set with two toys and dried catnip for a special cat.',
                 'price' => 59.90,
                 'stock' => 25,
+                'image' => null,
             ],
             [
                 'category' => 'Sets and Gifts',
@@ -130,6 +147,7 @@ class ProductSeeder extends Seeder
                 'description' => 'A set of three aromatic plants: catnip, matatabi, and valerian.',
                 'price' => 44.90,
                 'stock' => 40,
+                'image' => null,
             ],
         ];
         foreach ($products as $data) {
@@ -146,6 +164,7 @@ class ProductSeeder extends Seeder
                     'description' => $data['description'],
                     'price' => $data['price'],
                     'stock' => $data['stock'],
+                    'image' => $data['image'],
                     'is_active' => true,
                 ]
             );

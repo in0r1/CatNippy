@@ -96,9 +96,14 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <a href="{{ route('products.show', $product->slug) }}">
                         <article class="product-card">
-                            <div class="product-placeholder">
-                                Product image coming soon
-                            </div>
+                            @if ($product->image)
+                                <img
+                                    src="{{ $product->image_url }}"
+                                    alt="{{ $product->name }}"
+                                    class="product-thumb"
+                                    loading="lazy"
+                                >
+                            @else
 
                             <div class="card-body">
                                 <p class="muted small mb-2">
