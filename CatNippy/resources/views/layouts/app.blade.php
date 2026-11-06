@@ -27,7 +27,7 @@
             <div class="d-flex gap-4 align-items-center">
                 <a href="{{ route('products.index') }}">Shop</a>
                 <a href="{{ route('cart.index') }}">Cart</a>
-                <a href="#">Our story</a>
+                <a href="{{ route('story') }}">Our story</a>
 
                 @auth
                     <a href="{{ route('profile.edit') }}">Account</a>

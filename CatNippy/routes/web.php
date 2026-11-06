@@ -127,3 +127,5 @@ Route::middleware('auth')->group(function () {
         'refresh',
     ])->name('admin.catalog.stock.refresh');
 });
+
+Route::view('/our-story', 'pages.story')->name('story');
